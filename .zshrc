@@ -14,7 +14,7 @@ prompt spaceship
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="spaceship"
-
+# These use some wacky quotes for some reason :/  I think it breaks if you try to change them...
 SPACESHIP_PROMPT_ADD_NEWLINE=”true”
 SPACESHIP_CHAR_SYMBOL=" \ue777"
 SPACESHIP_CHAR_PREFIX="\uf296"
@@ -108,65 +108,18 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-alias zshconfig="nano ~/.zshrc"
-alias ohmyzsh="nano ~/.oh-my-zsh"
-# alias ls="colorls — light — sort-dirs — report"
-# alias lc="colorls — tree — light"
-alias ls="colorls"
-source $(dirname $(gem which colorls))/tab_complete.sh
+# okie doke, these lines call other dot files in order to make it cleaner in here
+# include .aliases if it exists
 
-# VLC alias - hi, this will only work on my Mac unless I upload the start script, what it does it start VLC with Discord rich presence
-alias vlc="/jack/Documents/VLCRP/start.sh"
+if [ -f $HOME/.aliases ]; then
+    . $HOME/.aliases
+fi
 
-# Custom alises
-alias ports="netstat -tulanp"
-alias diff="colordiff"
-alias mount="mount |column -t"
-alias h="history"
-alias j="jobs -l"
-alias c="clear"
-alias root="sudo -i"
-alias su="sudo -i"
-alias nf="neofetch"
-# System Usage aliases
-alias meminfo="free -m -l -t"
-alias psmem="ps auxf | sort -nr -k 4"
-alias psmem10="ps auxf | sort -nr -k 4 | head -10"
-alias pscpu="ps auxf | sort -nr -k 3"
-alias pscpu10="ps auxf | sort -nr -k 3 | head -10"
-alias cpuinfo="lscupu"
-alias gpumeminfo="grep -i --color memory /var/log/Xorg.o.log"
+# include .exports if it exists (exports is the exports and sources) THIS MUST BE THE LAST THING LOADED!
 
-# Add scripts to the path, so that way I can use them.
-export PATH="$PATH:$HOME/scripts"
+if [ -f $HOME/.exports ]; then
+    . $HOME/.exports
+fi
 
-# Add Visual Studio Code (code)
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-
-#source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# Hi future Jack, make sure you do this
-
-source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# This is for iTerm2 shell integration on my mac
-source ~/.iterm2_shell_integration.zsh
-
-#Uhhh I think I SDKMAN because its used to do something with gradle, I wrote a guide someplace...
-
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-# lol i forgot what this is for, I think it's for homebrew, but idk, also, why do all of these things say they have to be the very last PATH change, smh.
-export PATH="/usr/local/sbin:$PATH"
-
-# Hi this is the alias for my dotfile config stuff, I followed this guide: https://www.atlassian.com/git/tutorials/dotfiles
+# Hi, this is the alias for my dotfile config stuff, I followed this guide: https://www.atlassian.com/git/tutorials/dotfiles
 alias config='/usr/bin/git --git-dir=/Users/jack/.cfg/ --work-tree=/Users/jack' 
