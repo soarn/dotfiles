@@ -133,6 +133,7 @@ alias j="jobs -l"
 alias c="clear"
 alias root="sudo -i"
 alias su="sudo -i"
+alias nf="neofetch"
 # System Usage aliases
 alias meminfo="free -m -l -t"
 alias psmem="ps auxf | sort -nr -k 4"
@@ -157,7 +158,8 @@ source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.iterm2_shell_integration.zsh
 
 #Uhhh I think I SDKMAN because its used to do something with gradle, I wrote a guide someplace...
-export SDKMAN_DIR="$HOME.sdkman"
+
+export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
