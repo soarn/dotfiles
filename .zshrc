@@ -3,7 +3,7 @@
  export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/jack/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
@@ -121,8 +121,8 @@ alias ohmyzsh="nano ~/.oh-my-zsh"
 alias ls="colorls"
 source $(dirname $(gem which colorls))/tab_complete.sh
 
-# VLC alias
-alias vlc="/Jack/Documents/VLCRP/start.sh"
+# VLC alias - hi, this will only work on my Mac unless I upload the start script, what it does it start VLC with Discord rich presence
+alias vlc="/jack/Documents/VLCRP/start.sh"
 
 # Custom alises
 alias ports="netstat -tulanp"
@@ -149,14 +149,16 @@ export PATH="$PATH:$HOME/scripts"
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 #source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Hi future Jack, make sure you do this
 
-source /Users/jack/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# This is for iTerm2 shell integration on my mac
 source ~/.iterm2_shell_integration.zsh
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/jack/.sdkman"
-[[ -s "/Users/jack/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jack/.sdkman/bin/sdkman-init.sh"
+#Uhhh I think I SDKMAN because its used to do something with gradle, I wrote a guide someplace...
+export SDKMAN_DIR="$HOME.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
@@ -164,4 +166,5 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # lol i forgot what this is for, I think it's for homebrew, but idk, also, why do all of these things say they have to be the very last PATH change, smh.
 export PATH="/usr/local/sbin:$PATH"
 
+# Hi this is the alias for my dotfile config stuff, I followed this guide: https://www.atlassian.com/git/tutorials/dotfiles
 alias config='/usr/bin/git --git-dir=/Users/jack/.cfg/ --work-tree=/Users/jack' 
