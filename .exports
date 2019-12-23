@@ -1,0 +1,24 @@
+# Add scripts to the path, so that way I can use them.
+export PATH="$PATH:$HOME/scripts"
+
+# Add Visual Studio Code (code)
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+#source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Hi future Jack, make sure you do this
+
+source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# This is for iTerm2 shell integration on my mac
+source ~/.iterm2_shell_integration.zsh
+
+#Uhhh I think I SDKMAN because its used to do something with gradle, I wrote a guide someplace...
+
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# lol i forgot what this is for, I think it's for homebrew, but idk, also, why do all of these things say they have to be the very last PATH change, smh.
+export PATH="/usr/local/sbin:$PATH"
