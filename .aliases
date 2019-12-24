@@ -6,6 +6,12 @@
 # Example aliases
 alias zshconfig="nano ~/.zshrc"
 alias ohmyzsh="nano ~/.oh-my-zsh"
+
+# lol idk lmao
+alias aliases="nano ~/.aliases"
+alias exports="nano ~/.exports"
+# jk those are actually needed in order to quickly edit stuff on the command line.  vim bad git gud
+
 # alias ls="colorls — light — sort-dirs — report"
 # alias lc="colorls — tree — light"
 alias ls="colorls"

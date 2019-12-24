@@ -4,7 +4,7 @@
     "git.autofetch": true,
     "window.zoomLevel": 0,
     "terminal.external.osxExec": "iTerm.app",
-    "workbench.iconTheme": "city-lights-icons-vsc-light",
+    "workbench.iconTheme": "vscode-icons",
     "files.autoGuessEncoding": true,
     "terminal.explorerKind": "external"
 }

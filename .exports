@@ -1,5 +1,13 @@
+# hi, for a full list of exports, run `exports`.
+
 # Add scripts to the path, so that way I can use them.
 export PATH="$PATH:$HOME/scripts"
+
+# OKay, hi, so even though I have the above thingy-majig uhh it's not working for this script I made so im gonna do it here!
+# oops this should be in ~/.alises but the thing aBOVe?
+alias cool="$HOME/scripts/cool.sh"
+alias coochie="$HOME/scripts/coochie.sh"
+alias penis="$HOME/scripts/penis.sh"
 
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
