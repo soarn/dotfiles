@@ -1,9 +1,10 @@
 {
-    "files.autoSave": "afterDelay",
     "editor.fontFamily": "monoid Nerd Font",
     "workbench.colorTheme": "Material Theme Palenight High Contrast",
     "git.autofetch": true,
-    "workbench.iconTheme": "Monokai Classic Icons",
     "window.zoomLevel": 0,
-    "terminal.external.osxExec": "iTerm.app"
+    "terminal.external.osxExec": "iTerm.app",
+    "workbench.iconTheme": "city-lights-icons-vsc-light",
+    "files.autoGuessEncoding": true,
+    "terminal.explorerKind": "external"
 }
