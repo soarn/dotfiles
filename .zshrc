@@ -123,3 +123,5 @@ fi
 
 # Hi, this is the alias for my dotfile config stuff, I followed this guide: https://www.atlassian.com/git/tutorials/dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' 
+
+# Hey here's something cool I found, looks kinda sexy: http://dotshare.it/dots/1256/
