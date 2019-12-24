@@ -6,8 +6,9 @@
     "terminal.external.osxExec": "iTerm.app",
     "workbench.iconTheme": "vscode-icons",
     "files.autoGuessEncoding": true,
-    "terminal.explorerKind": "external"
-    "[markdown": {
+    "terminal.explorerKind": "external",
+    "[markdown]": {
         "editor.quickSuggestions": true
+    }
     
 }
