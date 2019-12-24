@@ -122,4 +122,4 @@ if [ -f $HOME/.exports ]; then
 fi
 
 # Hi, this is the alias for my dotfile config stuff, I followed this guide: https://www.atlassian.com/git/tutorials/dotfiles
-alias config='/usr/bin/git --git-dir=/Users/jack/.cfg/ --work-tree=/Users/jack' 
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' 
