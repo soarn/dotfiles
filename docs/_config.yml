@@ -1,7 +1,6 @@
 title: jack's dotfiles
 description: my personal dotfiles (for macOS)
 logo: https://raw.githubusercontent.com/soarnpro/soarn.pro/master/favicon-194x194.png
-og:image: https://raw.githubusercontent.com/soarnpro/soarn.pro/master/favicon-194x194.png
 show_downloads: false
 # Theme
 theme: jekyll-theme-minimal
