@@ -8,7 +8,7 @@
     "files.autoGuessEncoding": true,
     "terminal.explorerKind": "external",
     "[markdown]": {
-        "editor.quickSuggestions": true
+        "editor.quickSuggestions": false
     }
     
 }
