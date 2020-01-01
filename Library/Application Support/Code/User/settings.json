@@ -9,6 +9,7 @@
     "terminal.explorerKind": "external",
     "[markdown]": {
         "editor.quickSuggestions": false
-    }
+    },
+    "explorer.confirmDragAndDrop": false
     
 }
