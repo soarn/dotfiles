@@ -17,7 +17,7 @@ alias exports="nano ~/.exports"
 alias ls="colorls"
 source $(dirname $(gem which colorls))/tab_complete.sh
 
-# VLC alias - hi, this will only work on my Mac unless I upload the start script, what it does it start VLC with Discord rich presence
+# VLC alias - hi, this will only work on my Mac unless I upload the start script, it starts VLC with Discord rich presence
 alias vlc="/jack/Documents/VLCRP/start.sh"
 
 # Custom alises
