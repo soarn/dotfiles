@@ -30,3 +30,16 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # lol i forgot what this is for, I think it's for homebrew, but idk, also, why do all of these things say they have to be the very last PATH change, smh.
 export PATH="/usr/local/sbin:$PATH"
+
+# npm
+# export NVM_DIR=~/.nvm
+#  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+# more npm?
+export PATH=/usr/local/share/npm/bin:$PATH
+
+# ==> docbook
+# To use the DocBook package in your XML toolchain,
+# you need to add the following to your ~/.bashrc:
+
+export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
