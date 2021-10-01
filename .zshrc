@@ -84,9 +84,9 @@ SPACESHIP_USER_SHOW=”true”
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  gem zsh-nvm
   zsh-syntax-highlighting
   zsh-autosuggestions
+  per-directory-history
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -100,9 +100,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='nano'
+#   export EDITOR='vim'
 # else
-#   export EDITOR='nano'
+#   export EDITOR='vim'
 # fi
 
 # Compilation flags
@@ -125,3 +125,6 @@ fi
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' 
 
 # Hey here's something cool I found, looks kinda sexy: http://dotshare.it/dots/1256/
+
+# Use pywal to Restore without setting the wallpaper, and to not print anything.
+ wal -R -n -e -q

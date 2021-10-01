@@ -27,6 +27,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+# https://github.com/athityakumar/colorls/issues/322
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 
 # lol i forgot what this is for, I think it's for homebrew, but idk, also, why do all of these things say they have to be the very last PATH change, smh.
 export PATH="/usr/local/sbin:$PATH"
@@ -43,3 +45,9 @@ export PATH=/usr/local/share/npm/bin:$PATH
 # you need to add the following to your ~/.bashrc:
 
 export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
+
+
+# I brew upgraded today and it told me to put these GUILE files in my exports, https://formulae.brew.sh/formula/guile Which is the GNU Ubiquitous Intelligent Language for Extensions.
+export GUILE_LOAD_PATH="/usr/local/share/guile/site/3.0"
+export GUILE_LOAD_COMPILED_PATH="/usr/local/lib/guile/3.0/site-ccache"
+export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
