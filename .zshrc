@@ -128,3 +128,6 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Use pywal to Restore without setting the wallpaper, and to not print anything.
  wal -R -n -e -q
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

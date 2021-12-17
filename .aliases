@@ -43,7 +43,11 @@ alias sherlock="python3 sherlock"
 
 # Pywal
 alias gw="cd ~/Pictures/Wallpapers"
-alias ww="wal -e -i"
+# alias ww="wal -e -i"
+www () 
+{
+    wal -e -i "$1" && pywalfox update && rm -f ~/Documents/GitHub/Bento/assets/background.jpg && cp "$1" ~/Documents/GitHub/Bento/assets/background.jpg && cd ~/Documents/GitHub/Bento && git add . && git commit -m "automated background update" && git push && gw
+}
 
 # Custom alises
 alias ports="netstat -tulanp"
