@@ -1,3 +1,15 @@
 [submodule "zsh-syntax-highlighting"]
 	path = zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule ".config/nvim/plugged/copilot.vim"]
+	path = .config/nvim/plugged/copilot.vim
+	url = https://github.com/github/copilot.vim
+[submodule ".config/nvim/plugged/defx-icons"]
+	path = .config/nvim/plugged/defx-icons
+	url = https://github.com/kristijanhusak/defx-icons
+[submodule ".config/nvim/plugged/defx.nvim"]
+	path = .config/nvim/plugged/defx.nvim
+	url = https://github.com/Shougo/defx.nvim
+[submodule ".config/nvim/plugged/vim-sensible"]
+	path = .config/nvim/plugged/vim-sensible
+	url = https://github.com/tpope/vim-sensible

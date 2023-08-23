@@ -1,81 +1,21 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+##PL10K##if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+##PL10K##  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+##PL10K##fi
+
 # If you come from bash you might have to change your $PATH.
 # If it breaks, comment out the below line.
- export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
+# !!BEGIN POWERLEVEL10k CONFIG!!
+##PL10K##ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="spaceship"
-# These use some wacky quotes for some reason :/  I think it breaks if you try to change them...
-SPACESHIP_PROMPT_ADD_NEWLINE=”true”
-SPACESHIP_CHAR_SYMBOL=" \ue777"
-SPACESHIP_CHAR_PREFIX="\uf296"
-# SPACESHIP_CHAR_SUFFIX=(“ “)
-SPACESHIP_CHAR_COLOR_SUCCESS=”yellow”
-SPACESHIP_PROMPT_DEFAULT_PREFIX=”$USER”
-SPACESHIP_PROMPT_FIRST_PREFIX_SHOW=”false”
-SPACESHIP_USER_SHOW=”true”
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -83,51 +23,53 @@ SPACESHIP_USER_SHOW=”true”
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  #zsh-motd
   git
   zsh-syntax-highlighting
   zsh-autosuggestions
   per-directory-history
+  zsh-prompt-benchmark
 )
 
 source $ZSH/oh-my-zsh.sh
 
+# https://www.sheldonhull.com/docs/shell/#installing-brew-packages
+# Minimize Homebrew updates for each run, speeding things up
+export HOMEBREW_NO_AUTO_UPDATE=1
+
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='vim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# Atlassian dotfiles manager https://www.atlassian.com/git/tutorials/dotfiles
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' 
 
-# okie doke, these lines call other dot files in order to make it cleaner in here
-# include .aliases if it exists
+#Synthwave TMUX color scheme that I might use later: http://dotshare.it/dots/1256/
+
+# Use pywal to Restore without setting the wallpaper, and to not print anything.
+wal -R -n -e -q
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Import Alises and Exports (These should be the last files sourced.)
 
 if [ -f $HOME/.aliases ]; then
     . $HOME/.aliases
 fi
 
-# include .exports if it exists (exports is the exports and sources) THIS MUST BE THE LAST THING LOADED!
-
 if [ -f $HOME/.exports ]; then
     . $HOME/.exports
 fi
+export PATH=$PATH:/Users/jack/.spicetify
 
-# Hi, this is the alias for my dotfile config stuff, I followed this guide: https://www.atlassian.com/git/tutorials/dotfiles
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' 
-
-# Hey here's something cool I found, looks kinda sexy: http://dotshare.it/dots/1256/
-
-# Use pywal to Restore without setting the wallpaper, and to not print anything.
- wal -R -n -e -q
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

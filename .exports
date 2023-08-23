@@ -1,27 +1,20 @@
-# hi, for a full list of exports, run `exports`.
+# For a full list of exports, run `exports`.
 
 # Add scripts to the path, so that way I can use them.
 export PATH="$PATH:$HOME/scripts"
 
-# OKay, hi, so even though I have the above thingy-majig uhh it's not working for this script I made so im gonna do it here!
-# oops this should be in ~/.alises but the thing aBOVe?
-alias cool="$HOME/scripts/cool.sh"
-alias coochie="$HOME/scripts/coochie.sh"
-alias penis="$HOME/scripts/penis.sh"
-
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-#source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# Hi future Jack, make sure you do this
-
 source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# This is for iTerm2 shell integration on my mac
 source ~/.iterm2_shell_integration.zsh
 
-#Uhhh I think I SDKMAN because its used to do something with gradle, I wrote a guide someplace...
+# In the future if I modify Ranger further.
+# https://www.reddit.com/r/linuxquestions/comments/9s2dwh/ranger_terminal_file_manager_the_option_named/
+# export RANGER_LOAD_DEFAULT_RC=true
 
+# SDKMAN is needed for Gradle
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
@@ -29,9 +22,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export PATH="$PATH:$HOME/.rvm/bin"
 # https://github.com/athityakumar/colorls/issues/322
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
-
-# lol i forgot what this is for, I think it's for homebrew, but idk, also, why do all of these things say they have to be the very last PATH change, smh.
-export PATH="/usr/local/sbin:$PATH"
 
 # npm
 # export NVM_DIR=~/.nvm
@@ -46,8 +36,9 @@ export PATH=/usr/local/share/npm/bin:$PATH
 
 export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
 
-
 # I brew upgraded today and it told me to put these GUILE files in my exports, https://formulae.brew.sh/formula/guile Which is the GNU Ubiquitous Intelligent Language for Extensions.
 export GUILE_LOAD_PATH="/usr/local/share/guile/site/3.0"
 export GUILE_LOAD_COMPILED_PATH="/usr/local/lib/guile/3.0/site-ccache"
 export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
+
+export PATH="/usr/local/sbin:$PATH"
