@@ -2,9 +2,9 @@
 
 echo "Setting up your Mac..."
 
-# Check for Oh My Zsh and install if we don't have it
-if test ! $(which omz); then
-  /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
+# Check for Oh My Posh and install if we don't have it
+if test ! $(which oh-my-posh); then
+	brew install oh-my-posh
 fi
 
 # Check for Homebrew and install if we don't have it
@@ -26,22 +26,14 @@ brew update
 brew tap homebrew/bundle
 brew bundle --file ./Brewfile
 
-# Set default MySQL root password and auth type
-mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
-
 # Create a projects directories
 mkdir $HOME/Code
-mkdir $HOME/Herd
-
-# Create Code subdirectories
-mkdir $HOME/Code/blade-ui-kit
-mkdir $HOME/Code/laravel
 
 # Clone Github repositories
-./clone.sh
+#./clone.sh
 
 # Symlink the Mackup config file to the home directory
 ln -s ./.mackup.cfg $HOME/.mackup.cfg
 
 # Set macOS preferences - we will run this last because this will reload the shell
-source ./.macos
+#source ./.macos
