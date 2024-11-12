@@ -1,11 +1,10 @@
 # Taps
-tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
 tap "buo/cask-upgrade"
 
 # Binaries
-brew 'awscli'
-brew 'bash' # Latest Bash version
+#brew 'awscli'
+#brew 'bash' # Latest Bash version
 brew 'bat' # Used for spatie/visit
 brew 'coreutils' # Those that come with macOS are outdated
 brew 'ffmpeg'
