@@ -1,0 +1,100 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "properties": {
+            "fetch_version": false
+          },
+          "style": "plain",
+          "template": "({{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }})",
+          "foreground": "white",
+          "background": "",
+          "type": "python"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "style": "plain",
+          "template": "# ",
+          "foreground": "lightBlue",
+          "background": "",
+          "type": "text"
+        },
+        {
+          "style": "plain",
+          "template": " % ",
+          "foreground": "red",
+          "background": "",
+          "type": "root"
+        },
+        {
+          "style": "plain",
+          "template": "<cyan>{{ .UserName }}</> <darkGray>@</> <green>{{ .HostName }}</> ",
+          "foreground": "",
+          "background": "",
+          "type": "session"
+        },
+        {
+          "properties": {
+            "style": "full"
+          },
+          "style": "plain",
+          "template": "<darkGray>in </>{{ .Path }} ",
+          "foreground": "lightYellow",
+          "background": "",
+          "type": "path"
+        },
+        {
+          "properties": {
+            "fetch_status": true
+          },
+          "style": "plain",
+          "template": "<darkGray>on</> <white>git:</><cyan>{{ .HEAD }}</>{{ if .Working.Changed }}<red> x</>{{ end }} ",
+          "foreground": "",
+          "background": "",
+          "type": "git"
+        },
+        {
+          "style": "plain",
+          "template": "[{{ .CurrentDate | date .Format }}]",
+          "foreground": "darkGray",
+          "background": "",
+          "type": "time"
+        },
+        {
+          "style": "plain",
+          "template": " C:{{ if gt .Code 0 }}{{ .Code }}{{ end }} ",
+          "foreground": "red",
+          "background": "",
+          "type": "status"
+        }
+      ],
+      "newline": true
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "style": "plain",
+          "template": "$",
+          "foreground": "lightRed",
+          "background": "",
+          "type": "text"
+        }
+      ],
+      "newline": true
+    }
+  ],
+  "version": 3,
+  "final_space": true
+  "iterm_features": ['prompt_mark','current_dir,','remote_host']
+}

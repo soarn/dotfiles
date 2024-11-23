@@ -10,14 +10,16 @@ alias library="cd $HOME/Library"
 alias projects="cd $HOME/code"
 CODE=$HOME/code
 alias capstone="cd $HOME/code/capstone && source venv/bin/activate"
+alias school="cd $HOME/code/school"
+alias smt="cd $HOME/code/smt && source venv/bin/activate"
 
 # ls
-ld='eza -lD'
-lf='eza -lF --color=always | grep -v /'
-lh='eza -dl .* --group-directories-first'
-ll='eza -al --group-directories-first'
-ls='eza -alF --color=always --sort=size | grep -v /'
-lt='eza -al --sort=modified'
+alias ld='eza -lD'
+alias lf='eza -lF --color=always | grep -v /'
+alias lh='eza -dl .* --group-directories-first'
+alias ll='eza -al --group-directories-first'
+alias ls='eza -alF --color=always --sort=size | grep -v /'
+alias lt='eza -al --sort=modified'
 # https://denshub.com/en/best-ls-command-alternative/
 
 # Git
@@ -38,3 +40,7 @@ alias resolve="git add . && git commit --no-edit"
 alias stash="git stash -u"
 alias unstage="git restore --staged ."
 alias wip="commit wip"
+alias fetch="git fetch --all"
+
+# Flask
+alias fk="flask --app app/app.py run --debug --host='0.0.0.0'"

@@ -14,3 +14,4 @@ fi
 if [ -f $DOTFILES/exports.zsh ]; then
 	. $DOTFILES/exports.zsh
 fi
+
