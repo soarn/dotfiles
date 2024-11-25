@@ -1,4 +1,6 @@
-<p align="center"><img src="art/banner-2x.png"></p>
+# dotfiles
+
+Thank you to @driesvints for creating the foundation for this repository!
 
 ## Introduction
 
