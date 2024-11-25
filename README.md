@@ -1,6 +1,6 @@
 # dotfiles
 
-Thank you to @driesvints for creating the foundation for this repository!
+Thank you to [@driesvints](https://github.com/driesvints) for creating the foundation for this repository!
 
 ## Introduction
 
