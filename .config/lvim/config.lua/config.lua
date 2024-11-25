@@ -1,0 +1,1 @@
+/Users/lumi/.config/lvim/config.lua
